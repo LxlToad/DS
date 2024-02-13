@@ -1,6 +1,6 @@
 local count = 0
 local pos = game:GetService("Workspace").Main.Live["Bear King"].HumanoidRootPart.Position
-local pos1 = game:GetService("Workspace").Main.Live["Bear King"].HumanoidRootPart.Position.x+0.001
+local pos1 = pos.x+0.001
 while count <= 50 do
     count=count+1 
     local args = {
@@ -13,7 +13,7 @@ while count <= 50 do
         },
         ["CurrentLight"] = 1,
         ["CurrentLightCombo"] = 1,
-        ["VictimPosition"] = Vector3.new(pos1),
+        ["VictimPosition"] = pos,
         ["AnimSet"] = "Generic"
         }
     }
