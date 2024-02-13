@@ -1,0 +1,23 @@
+local count = 0
+
+while count < 1000 do
+    count+=1 
+    local args = {
+        [1] = {
+            ["Victim"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Bear King"),
+            ["VictimPosition"] = Vector3.new(-1146.6456298828125, 448.75091552734375, -2696.076904296875),
+            ["CurrentHeavy"] = 1,
+            ["LocalInfo"] = {
+                ["LockedOn"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Bear King"),
+                ["Flying"] = true
+            },
+            ["CurrentLight"] = 1,
+            ["CurrentLightCombo"] = 1,
+            ["Type"] = "Light",
+            ["AnimSet"] = "Generic"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
+    
+end
