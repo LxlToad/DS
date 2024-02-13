@@ -3,7 +3,6 @@ local pos = game:GetService("Workspace").Main.Live.Zuto.HumanoidRootPart.Positio
 
 while count <= 500 do
     pos = game:GetService("Workspace").Main.Live.Zuto.HumanoidRootPart.Position
-    pos.x += 0.001
     count=count+1 
     local args = {
         [1] = {
