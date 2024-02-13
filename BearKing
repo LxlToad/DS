@@ -1,6 +1,6 @@
 local count = 0
 
-while count < 1000 do
+while count < 50 do
     count+=1 
     local args = {
         [1] = {
