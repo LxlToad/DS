@@ -1,6 +1,6 @@
 local count = 0
 local pos = game:GetService("Workspace").Main.Live["Monster Saibablue"].HumanoidRootPart.Position
-local pos1 = pos
+
 while count <= 50 do
     count=count+1 
     local args = {
