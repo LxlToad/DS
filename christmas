@@ -1,4 +1,26 @@
 local count = 0
-while count <= 5000 do
-  d
+local pos = game:GetService("Workspace").Main.Live.Zuto.HumanoidRootPart.Position
+
+while count <= 500 do
+    pos = game:GetService("Workspace").Main.Live.Zuto.HumanoidRootPart.Position
+    pos.x += 0.001
+    count=count+1 
+    local args = {
+        [1] = {
+            ["Victim"] = getNil("Zuto", "Model"),
+            ["VictimPosition"] = Vector3.new(),
+            ["CurrentHeavy"] = 3,
+            ["LocalInfo"] = {
+                ["LockedOn"] = getNil("Zuto", "Model"),
+                ["Flying"] = true
+            },
+            ["CurrentLight"] = 1,
+            ["CurrentLightCombo"] = 1,
+            ["Type"] = "Light",
+            ["AnimSet"] = "Broly"
+        }
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
+
 end
