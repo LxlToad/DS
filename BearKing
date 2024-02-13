@@ -4,20 +4,39 @@ while count < 1000 do
     count+=1 
     local args = {
         [1] = {
-            ["Victim"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Bear King"),
-            ["VictimPosition"] = Vector3.new(-1146.6456298828125, 448.75091552734375, -2696.076904296875),
-            ["CurrentHeavy"] = 1,
-            ["LocalInfo"] = {
-                ["LockedOn"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Bear King"),
-                ["Flying"] = true
-            },
-            ["CurrentLight"] = 1,
-            ["CurrentLightCombo"] = 1,
             ["Type"] = "Heavy",
+            ["CurrentHeavy"] = 2,
+            ["DelayTime"] = 0,
+            ["HeavyPreDelay"] = {
+                ["Part"] = "Leg",
+                ["Weight"] = "Slow"
+            },
+            ["CurrentLightCombo"] = 1,
+            ["CurrentLight"] = 1,
             ["AnimSet"] = "Generic"
         }
     }
-    
+
     game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
-    
+
+    function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
+
+    local args = {
+        [1] = {
+            ["Victim"] = getNil("Bear King", "Model"),
+            ["Type"] = "Heavy",
+            ["CurrentHeavy"] = 2,
+            ["CurrentLight"] = 1,
+            ["CurrentLightCombo"] = 1,
+            ["AnimSet"] = "Generic",
+            ["VictimPosition"] = Vector3.new(-1147.36767578125, 448.7599792480469, -2695.811767578125),
+            ["DelayTime"] = 0,
+            ["LocalInfo"] = {
+                ["Flying"] = false
+            }
+        }
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
+  
 end
