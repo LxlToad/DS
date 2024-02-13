@@ -2,25 +2,8 @@ local count = 0
 
 while count < 50 do
     count+=1 
-    local args = {
-        [1] = {
-            ["Type"] = "Heavy",
-            ["CurrentHeavy"] = 2,
-            ["DelayTime"] = 0,
-            ["HeavyPreDelay"] = {
-                ["Part"] = "Leg",
-                ["Weight"] = "Slow"
-            },
-            ["CurrentLightCombo"] = 1,
-            ["CurrentLight"] = 1,
-            ["AnimSet"] = "Generic"
-        }
-    }
-
-    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
 
     function getNil(name,class) for _,v in next, getnilinstances() do if v.ClassName==class and v.Name==name then return v;end end end
-
     local args = {
         [1] = {
             ["Victim"] = getNil("Bear King", "Model"),
@@ -29,7 +12,7 @@ while count < 50 do
             ["CurrentLight"] = 1,
             ["CurrentLightCombo"] = 1,
             ["AnimSet"] = "Generic",
-            ["VictimPosition"] = Vector3.new(-1147.36767578125, 448.7599792480469, -2695.811767578125),
+            ["VictimPosition"] = Vector3.new(game:GetService("Workspace").BattlegroundsNPC.Main.Live["Bear King"].HumanoidRootPart.Position),
             ["DelayTime"] = 0,
             ["LocalInfo"] = {
                 ["Flying"] = false
