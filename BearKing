@@ -1,5 +1,5 @@
 local count = 0
-local pos = Vector3(game:GetService("Workspace").Main.Live["Bear King"].HumanoidRootPart.Position)
+local pos = Vector3.new(game:GetService("Workspace").Main.Live["Bear King"].HumanoidRootPart.Position)
 
 while count <= 50 do
     pos.y = pos.y + 0.00001
