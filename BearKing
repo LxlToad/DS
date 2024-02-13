@@ -2,7 +2,7 @@ local count = 0
 local pos = Vector3(game:GetService("Workspace").Main.Live["Bear King"].HumanoidRootPart.Position)
 
 while count <= 50 do
-    local pos1 = pos.y + 1
+    pos.y = pos.y + 0.00001
     count=count+1 
     local args = {
     [1] = {
