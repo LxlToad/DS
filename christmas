@@ -1,1 +1,4 @@
-
+local count = 0
+while count <= 5000 do
+  d
+end
