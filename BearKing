@@ -6,16 +6,17 @@ while count <= 50 do
     local args = {
     [1] = {
         ["Victim"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Monster Saibablue"),
-        ["Type"] = "Heavy",
+        ["VictimPosition"] = pos,
         ["CurrentHeavy"] = 2,
         ["LocalInfo"] = {
             ["Flying"] = false
         },
         ["CurrentLight"] = 1,
         ["CurrentLightCombo"] = 1,
-        ["VictimPosition"] = pos,
+        ["Type"] = "Light",
         ["AnimSet"] = "Generic"
-        }
     }
-    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
 end
