@@ -13,7 +13,7 @@ while count < 1000 do
             },
             ["CurrentLight"] = 1,
             ["CurrentLightCombo"] = 1,
-            ["Type"] = "Light",
+            ["Type"] = "Heavy",
             ["AnimSet"] = "Generic"
         }
     }
