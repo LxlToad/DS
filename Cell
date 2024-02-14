@@ -1,12 +1,11 @@
 local count = 0
 local pos = game:GetService("Workspace").Main.Live["Sell Tier 2"].HumanoidRootPart.Position
 
-local tp = game:GetService("Workspace").Main.Live["Sell Tier 2"].HumanoidRootPart.CFrame
-if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame ~= tp then
-  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
-end
-
 while pos ~= nil do
+    local tp = game:GetService("Workspace").Main.Live["Sell Tier 2"].HumanoidRootPart.CFrame
+    if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame ~= tp then
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
+    end
     wait(0.0001)
     pos = game:GetService("Workspace").Main.Live["Sell Tier 2"].HumanoidRootPart.Position
     count=count+1 
