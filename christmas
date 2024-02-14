@@ -26,4 +26,4 @@ repeat
     }
 
     game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
-until(count >= 5000)
+until(pos == nil)
