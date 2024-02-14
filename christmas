@@ -2,9 +2,11 @@ local count = 0
 local pos = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.Position
 
 local tp = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.CFrame
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
-
-while (count <= 500000) do
+if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame != tp do
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
+end
+repeat
+    wait(0.0001)
     pos = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.Position
     count=count+1 
     local args = {
@@ -23,4 +25,4 @@ while (count <= 500000) do
     }
 
     game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
-end
+until(count >= 5000)
