@@ -14,7 +14,7 @@ while count <= 500 do
         },
         ["CurrentLight"] = 1,
         ["CurrentLightCombo"] = 1,
-        ["VictimPosition"] = Vector3.new(-2244.558349609375, 369.4388732910156, -11375.720703125),
+        ["VictimPosition"] = pos,
         ["AnimSet"] = "Broly"
         }
     }
