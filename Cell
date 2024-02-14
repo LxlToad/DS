@@ -16,8 +16,7 @@ while pos ~= nil do
         ["VictimPosition"] = pos,
         ["CurrentHeavy"] = 1,
         ["LocalInfo"] = {
-            ["LockedOn"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Sell Tier 2"),
-            ["Flying"] = true
+            ["Flying"] = false
         },
         ["CurrentLight"] = 2,
         ["CurrentLightCombo"] = 1,
