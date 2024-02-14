@@ -5,6 +5,7 @@ local tp = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.CFrame
 if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame != tp do
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
 end
+wait(2)
 repeat
     wait(0.0001)
     pos = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.Position
