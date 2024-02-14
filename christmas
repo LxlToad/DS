@@ -1,7 +1,10 @@
 local count = 0
 local pos = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.Position
 
-while count <= 500 do
+local tp = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
+
+while count <= 5000 do
     pos = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.Position
     count=count+1 
     local args = {
