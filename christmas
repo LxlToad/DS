@@ -4,7 +4,7 @@ local pos = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.Position
 local tp = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.CFrame
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
 
-while pos ~= 0 do
+while count < 5000 do
     wait(0.0001)
     pos = game:GetService("Workspace").Main.Live.Ape.HumanoidRootPart.Position
     count=count+1 
