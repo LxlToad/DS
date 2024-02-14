@@ -1,0 +1,31 @@
+local count = 0
+local pos = game:GetService("Workspace").Main.Live["Sell Tier 2"].HumanoidRootPart.Position
+
+local tp = game:GetService("Workspace").Main.Live["Sell Tier 2"].HumanoidRootPart.CFrame
+if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame ~= tp then
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp
+end
+
+while pos ~= nil do
+    wait(0.0001)
+    pos = game:GetService("Workspace").Main.Live["Sell Tier 2"].HumanoidRootPart.Position
+    count=count+1 
+    local args = {
+    [1] = {
+        ["Victim"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Sell Tier 2"),
+        ["VictimPosition"] = Vector3.new(-6042.2119140625, 2337.79931640625, 8783.705078125),
+        ["CurrentHeavy"] = 1,
+        ["LocalInfo"] = {
+            ["LockedOn"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Sell Tier 2"),
+            ["Flying"] = true
+        },
+        ["CurrentLight"] = 2,
+        ["CurrentLightCombo"] = 1,
+        ["Type"] = "Light",
+        ["AnimSet"] = "Broly"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
+
+end
