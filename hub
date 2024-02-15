@@ -1,5 +1,3 @@
-local boss = "" -- LOWERCASE
-
 if boss == "pikkon" then
   loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/pikkon"))()
 elseif boss == "ape" then
