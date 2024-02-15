@@ -1,7 +1,7 @@
 local count = 0
 
 --local drop = game:GetService("Workspace").ActiveDrops:GetDescendants()
-local drop2 = game:GetService("Workspace").ActiveDrops:FindFirstChildWhichIsA("Model")
+drop2 = game:GetService("Workspace").ActiveDrops:FindFirstChildWhichIsA("Model")
 
 
 
