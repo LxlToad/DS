@@ -1,0 +1,11 @@
+local count = 0
+repeat
+local args = {
+    [1] = {
+        [1] = "A",
+        [2] = "\6"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+until ( count >= num)
