@@ -1,0 +1,38 @@
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "ZestHub | Deez Nuts", HidePremium = false, IntroText = "Zest Hub", SaveConfig = true, ConfigFolder = "ZestTest"})
+
+--Values
+
+
+--Functions
+
+--Tabs
+local CoolTab = Window:MakeTab({
+    Name = "CoolTab",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+--Buttons
+CoolTab:AddDropdown({
+	Name = "Boss Farm",
+	Default = "None",
+	Options = {"None", "cell", "snowman", "broly", "ape", "pikkon"},
+	Callback = function(Value)
+		boss = Value
+        if Value ~= "None" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/hub"))()
+        end
+	end    
+})
+
+--[[
+Name = <string> - The name of the dropdown.
+Default = <string> - The default value of the dropdown.
+Options = <table> - The options in the dropdown.
+Callback = <function> - The function of the dropdown.
+]]
+
+OrionLib:Init()
