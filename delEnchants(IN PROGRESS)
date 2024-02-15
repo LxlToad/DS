@@ -1,0 +1,22 @@
+local bag = game:GetService("Players").ImxgineBeing.PlayerGui.Inventory.Frame.InventoryRoot.RightPanel.InventoryGridContainer.InventoryGrid:GetDescendents()
+
+for _,v in bag do
+  if v.Name == "Enchants" then
+    if v.Name == "1" or v.Name == "2" or v.Name == "3" or v.Name == "4" or v.Name == "5"  then
+      warn("REVEALED!")
+    else
+      local args = {
+        [1] = {
+            [1] = {
+                ["GUID"] = "58D19DBDB03F40EB8B7D5BF5C22848CB",
+                ["Category"] = "Bindable"
+            },
+            [2] = "S"
+        }
+      }
+  
+      game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+
+    
+    
+end
