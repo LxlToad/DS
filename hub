@@ -6,6 +6,8 @@ elseif boss == "snowman" then
   loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/christmas"))()
 elseif boss == "broly" then
   loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/brolyS"))()
+elseif boss == "cell" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/Cell"))()
 else 
   warn("INVALID BOSS")
 end
