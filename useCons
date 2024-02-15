@@ -1,0 +1,14 @@
+local args = {
+    [1] = {
+        [1] = {
+            ["GUID"] = "A236E32616E841D8B8678BD38848A242",
+            ["Data"] = {
+                ["Equipped"] = true
+            },
+            ["Category"] = "Consumable"
+        },
+        [2] = "T"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
