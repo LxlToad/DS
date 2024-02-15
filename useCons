@@ -1,14 +1,18 @@
-local args = {
-    [1] = {
-        [1] = {
-            ["GUID"] = "A236E32616E841D8B8678BD38848A242",
-            ["Data"] = {
-                ["Equipped"] = true
-            },
-            ["Category"] = "Consumable"
-        },
-        [2] = "T"
-    }
-}
+local bag = game:GetService("Players").ImxgineBeing.PlayerGui.Inventory.Frame.InventoryRoot.RightPanel.InventoryGridContainer.InventoryGrid:GetChildren()
 
-game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+for _,bag in bag do
+  local args = {
+      [1] = {
+          [1] = {
+              ["GUID"] = tostring(bag.Name),
+              ["Data"] = {
+                  ["Equipped"] = true
+              },
+              ["Category"] = "Consumable"
+          },
+          [2] = "T"
+      }
+  }
+  wait(0.2)
+  game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+end
