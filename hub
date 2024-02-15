@@ -1,0 +1,14 @@
+local boss = "" -- LOWERCASE
+
+if boss == "pikkon" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/pikkon"))()
+elseif boss == "ape" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/Ape"))()
+elseif boss == "snowman" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/christmas"))()
+elseif boss == "broly" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/brolyS"))()
+else 
+  warn("INVALID BOSS")
+end
+  
