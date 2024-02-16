@@ -1,3 +1,4 @@
+numVar = num
 local count = 0
 repeat
 local args = {
@@ -8,4 +9,4 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
-until ( count >= num)
+until (count >= numVar)
