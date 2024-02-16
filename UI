@@ -9,11 +9,10 @@ local Window = OrionLib:MakeWindow({Name = "ZestHub | Deez Nuts", HidePremium = 
 
 --Tabs
 local CoolTab = Window:MakeTab({
-    Name = "CoolTab",
+    Name = "Main Farm",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
-
 
 --Buttons
 CoolTab:AddDropdown({
@@ -24,15 +23,107 @@ CoolTab:AddDropdown({
 		boss = Value
         if Value ~= "None" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/hub"))()
+        OrionLib:MakeNotification({
+            Name = "Done Killing The Boss!",
+            Content = "You have finished killing the selected boss.",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
         end
 	end    
 })
 
+
+CoolTab:AddSlider({
+	Name = "How Much Goodie Bags to Buy",
+	Min = 1,
+	Max = 1000,
+	Default = 5,
+	Color = Color3.fromRGB(0,255,255),
+	Increment = 1,
+	ValueName = "Goodie Bags",
+	Callback = function(Value)
+		goodieVar = Value
+	end    
+})
+
+CoolTab:AddButton({
+	Name = "Buy Goodie Bags",
+	Callback = function()
+        Value = goodieVar
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/buyGoodie"))()
+        OrionLib:MakeNotification({
+            Name = "Done Buying Goodie Bags!",
+            Content = "You have finished purchasing your goodie bags.",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+  	end    
+})
+
+CoolTab:AddButton({
+	Name = "Use Consumables/Items! (Open Inventory (Event/Boosts))",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/useCons"))()
+        OrionLib:MakeNotification({
+            Name = "Done Using Consumables!",
+            Content = "You have finished using your consumables.",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+  	end    
+})
+
+CoolTab:AddSlider({
+	Name = "How Much to Dupe the Drop:",
+	Min = 1,
+	Max = 1000,
+	Default = 5,
+	Color = Color3.fromRGB(255,0,255),
+	Increment = 1,
+	ValueName = "Drops",
+	Callback = function(Value)
+		dropsVar = Value
+	end    
+})
+
+CoolTab:AddButton({
+	Name = "Collect Duped Drops",
+	Callback = function()
+        Value = dropsVar
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/infDrops"))()
+        OrionLib:MakeNotification({
+            Name = "Done Collecting Drops!",
+            Content = "You have finished collecting your drops.",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+  	end    
+})
+
 --[[
+Title = <string> - The title of the notification.
+Content = <string> - The content of the notification.
+Image = <string> - The icon of the notification.
+Time = <number> - The duration of the notfication.
+
+Name = <string> - The name of the slider.
+Min = <number> - The minimal value of the slider.
+Max = <number> - The maxium value of the slider.
+Increment = <number> - How much the slider will change value when dragging.
+Default = <number> - The default value of the slider.
+ValueName = <string> - The text after the value number.
+Callback = <function> - The function of the slider.
+
+
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+
+
 Name = <string> - The name of the dropdown.
 Default = <string> - The default value of the dropdown.
 Options = <table> - The options in the dropdown.
 Callback = <function> - The function of the dropdown.
-]]
+]]--
 
 OrionLib:Init()
