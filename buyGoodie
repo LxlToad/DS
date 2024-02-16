@@ -17,5 +17,5 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
-wait(0.7)
+wait(0.2)
 until (count >= Value)
