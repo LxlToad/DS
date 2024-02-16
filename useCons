@@ -1,4 +1,4 @@
-local bag = game:GetService("Players").ImxgineBeing.PlayerGui.Inventory.Frame.InventoryRoot.RightPanel.InventoryGridContainer.InventoryGrid:GetChildren()
+local bag = game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.InventoryRoot.RightPanel.InventoryGridContainer.InventoryGrid:GetChildren()
 
 for _,bag in bag do
   local args = {
