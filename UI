@@ -7,14 +7,32 @@ local Window = OrionLib:MakeWindow({Name = "ZestHub | Deez Nuts", HidePremium = 
 
 --Functions
 
---Tabs
+---- ||||| TABS ||||| ----
 local CoolTab = Window:MakeTab({
     Name = "Main Farm",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
---Buttons
+local consTab = Window:MakeTab({
+    Name = "Consumables",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local dropsTab = Window:MakeTab({
+    Name = "Drops",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local tpTab = Window:MakeTab({
+    Name = "Teleports",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+---- ||||| BUTTONS ||||| ----
+-- Buttons (Farm)
 CoolTab:AddDropdown({
 	Name = "Boss Farm",
 	Default = "None",
@@ -33,8 +51,8 @@ CoolTab:AddDropdown({
 	end    
 })
 
-
-CoolTab:AddSlider({
+-- Buttons (Cons)
+consTab:AddSlider({
 	Name = "How Much Goodie Bags to Buy",
 	Min = 1,
 	Max = 1000,
@@ -47,7 +65,7 @@ CoolTab:AddSlider({
 	end    
 })
 
-CoolTab:AddButton({
+consTab:AddButton({
 	Name = "Buy Goodie Bags",
 	Callback = function()
         Value = goodieVar
@@ -61,7 +79,7 @@ CoolTab:AddButton({
   	end    
 })
 
-CoolTab:AddButton({
+consTab:AddButton({
 	Name = "Use Consumables/Items! (Open Inventory (Event/Boosts))",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/useCons"))()
@@ -74,7 +92,8 @@ CoolTab:AddButton({
   	end    
 })
 
-CoolTab:AddSlider({
+-- Buttons (Drops)
+dropsTab:AddSlider({
 	Name = "How Much to Dupe the Drop:",
 	Min = 1,
 	Max = 1000,
@@ -87,7 +106,7 @@ CoolTab:AddSlider({
 	end    
 })
 
-CoolTab:AddButton({
+dropsTab:AddButton({
 	Name = "Collect Duped Drops",
 	Callback = function()
         Value = dropsVar
