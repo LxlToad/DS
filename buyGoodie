@@ -1,4 +1,4 @@
-numVar = num
+numVar = _G.num
 local count = 0
 repeat
 local args = {
