@@ -1,6 +1,6 @@
 local count = 0
 
---local drop = game:GetService("Workspace").ActiveDrops:GetDescendants()
+--local drop = game:GetService("Workspace").ActiveDrops:GetChildren()
 drop2 = game:GetService("Workspace").ActiveDrops:FindFirstChildWhichIsA("Model")
 
 
@@ -10,7 +10,7 @@ repeat
   local args = {
     [1] = {
         [1] = tostring(drop2.Name),
-        [2] = "\28"
+        [2] = "\29"
       }
   }
 
