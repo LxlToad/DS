@@ -10,7 +10,7 @@ for _,bag in bag do
               },
               ["Category"] = "Consumable"
           },
-          [2] = "T"
+          [2] = "U"
       }
   }
   wait(0.2)
