@@ -34,8 +34,8 @@ while pos ~= nil do
 
     game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
 end
+break
 end)
 if not success then
     warn("An error occurred:", result)
-    break
 end
