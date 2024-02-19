@@ -1,4 +1,14 @@
+workspace:WaitForChild("WorldPortals"):WaitForChild("Otherworld"):WaitForChild("Activate"):FireServer()
+repeat wait() until game:IsLoaded()
 local count = 0
+local args = {
+    [1] = {
+        [1] = true,
+        [2] = "\28"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
 pikkonCFrame = CFrame.new(-12734.748, 902.172302, -1250.52405, 0.0174518824, -0.0344778672, -0.999253035, -4.241243e-06, 0.999405265, -0.0344831906, 0.999847651, 0.000606033951, 0.0174413919)
 game:GetService("Workspace").Main.Live["ImxgineBeing"].HumanoidRootPart.CFrame = pikkonCFrame
 wait(2)
@@ -7,7 +17,7 @@ local tp1 = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Posit
 local tp2 = game:GetService("Workspace").Main.Live.Pikkon.Hitboxes.CharacterHitBox.Position
 repeat wait() until game:IsLoaded()
 wait(5)
-workspace:WaitForChild("WorldPortals"):WaitForChild("Otherworld"):WaitForChild("Activate"):FireServer()
+
 while true do
 
 wait(1)
