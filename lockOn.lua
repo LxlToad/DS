@@ -1,3 +1,5 @@
+local success, result = pcall(function()
+     
 local plr = tostring(game:GetService("Players").LocalPlayer)
 
 local npc = tostring(game:GetService("Workspace").Main.Live[plr].Data.LockedOn.Value)
@@ -31,4 +33,9 @@ while pos ~= nil do
     }
 
     game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
+end
+end)
+if not success then
+    warn("An error occurred:", result)
+    break
 end
