@@ -33,8 +33,13 @@ local success, result = pcall(function()
      
          game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
      end
-     return
+     if Value == false then
+          return
+          break
 end)
 if not success then
+     if Value == false then
+          return
+          break
     warn("An error occurred:", result)
 end
