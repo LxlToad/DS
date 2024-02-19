@@ -7,8 +7,9 @@ local tp1 = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Posit
 local tp2 = game:GetService("Workspace").Main.Live.Pikkon.Hitboxes.CharacterHitBox.Position
 repeat wait() until game:IsLoaded()
 wait(5)
-while true do
 workspace:WaitForChild("WorldPortals"):WaitForChild("Otherworld"):WaitForChild("Activate"):FireServer()
+while true do
+
 wait(1)
 local args = {
     [1] = {
