@@ -1,2 +1,2 @@
-global CARD
+
 print(CARD)
