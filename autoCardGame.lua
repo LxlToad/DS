@@ -8,7 +8,7 @@ elseif CARD == "Senzu" then
 elseif CARD == "Enchant" then
     card = "Rare Enchant Fragment"
 end
-print(card)
+
 function cardGame()
     local args = {
         [1] = {
@@ -97,12 +97,12 @@ function cardGame()
     wait(8)
 end
 
-while Value == true do
-    local success, errorMessage = pcall(cardGame)
-    if success then
-        print("Finished!")
-    else
-        print("Function call failed with error: " .. errorMessage)
-    end
+
+local success, errorMessage = pcall(cardGame)
+if success then
+    print("Finished!")
+else
+    print("Function call failed with error: " .. errorMessage)
 end
+
 
