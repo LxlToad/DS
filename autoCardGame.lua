@@ -1,4 +1,4 @@
-card = ""
+local card = ""
 if CARD == "GP" then
     card = "250 GP"
 elseif CARD == "Zenni" then
