@@ -1,4 +1,14 @@
-function cardGame()
+local card = ""
+if CARD == "GP" then
+    card = "250 GP"
+elseif CARD == "Zenni" then
+    card = "100000 Zenni"
+elseif CARD == "Senzu" then
+    card = "Senzu Bean"
+elseif CARD == "Enchant" then
+    card = "Rare Enchant Fragment"
+
+function cardGame(choice)
     local args = {
         [1] = {
             [1] = {
@@ -7,11 +17,7 @@ function cardGame()
                     ["Method"] = "Start"
                 }
             },
-            [2] = "\3",
-            [3] = false,
-            [4] = "\31",
-            [5] = false,
-            [6] = "4"
+            [2] = "\3"
         }
     }
     
@@ -39,7 +45,7 @@ function cardGame()
     local count = 0
     for _,v in pairs(cards) do
         if v:isA("MeshPart") then
-            if v.SurfaceGui.Frame.TextLabel.Text == "250 GP" or v.SurfaceGui.Frame.TextLabel.Text == "100 GP" then
+            if v.SurfaceGui.Frame.TextLabel.Text == choice or v.SurfaceGui.Frame.TextLabel.Text == "250 GP" then
                 local args = {
                     [1] = {
                         [1] = {
@@ -91,7 +97,7 @@ function cardGame()
 end
 
 while true do
-    local success, errorMessage = pcall(cardGame)
+    local success, errorMessage = pcall(cardGame(card))
     if success then
         print("Finished!")
     else
