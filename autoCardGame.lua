@@ -1,5 +1,4 @@
 card = ""
-print(CARD, card)
 if CARD == "GP" then
     card = "250 GP"
 elseif CARD == "Zenni" then
@@ -9,6 +8,7 @@ elseif CARD == "Senzu" then
 elseif CARD == "Enchant" then
     card = "Rare Enchant Fragment"
 end
+print(card)
 function cardGame()
     local args = {
         [1] = {
