@@ -46,7 +46,7 @@ function cardGame()
     local count = 0
     for _,v in pairs(cards) do
         if v:isA("MeshPart") then
-            if v.SurfaceGui.Frame.TextLabel.Text == card then
+            if v.SurfaceGui.Frame.TextLabel.Text == card or v.SurfaceGui.Frame.TextLabel.Text == "100 GP" then
                 local args = {
                     [1] = {
                         [1] = {
