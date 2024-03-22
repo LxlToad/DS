@@ -2,7 +2,7 @@ local card = ""
 if CARD == "GP" then
     card = "100 GP"
 elseif CARD == "Zenni" then
-    card = "50000 Zenni"
+    card = "50000 Zeni"
 elseif CARD == "Senzu" then
     card = "Senzu Bean"
 elseif CARD == "Enchant" then
