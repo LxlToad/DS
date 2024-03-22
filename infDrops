@@ -10,7 +10,7 @@ repeat
   local args = {
     [1] = {
         [1] = tostring(drop2.Name),
-        [2] = "\29"
+        [2] = ""
       }
   }
 
