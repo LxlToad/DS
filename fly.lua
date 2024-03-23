@@ -87,9 +87,6 @@ game:GetService("RunService").Heartbeat:connect(function(step)
         local cf = workspace.CurrentCamera.CFrame
         local ax, ay, az = cf:toEulerAnglesXYZ()
         c:SetPrimaryPartCFrame(CFrame.new(p.x, p.y, p.z) * CFrame.Angles(ax, ay, az))
-        local t = Vector3.new()
-        t = t + (setVec(cf.lookVector))
-        c:TranslateBy(t)
         if buttons.Moving then
             local t = Vector3.new()
             if buttons.W then t = t + (setVec(cf.lookVector)) end
