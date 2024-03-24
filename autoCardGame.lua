@@ -18,7 +18,7 @@ function cardGame()
                     ["Method"] = "Start"
                 }
             },
-            [2] = "\3"
+            [2] = "\4"
         }
     }
     
@@ -34,7 +34,7 @@ function cardGame()
                         ["Selected"] = i
                     }
                 },
-                [2] = "\3"
+                [2] = "\4"
             }
         }
 
@@ -56,7 +56,7 @@ function cardGame()
                                 ["Selected"] = tonumber(v.Name)
                             }
                         },
-                        [2] = "\3"
+                        [2] = "\4"
                     }
                 }
                 game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
@@ -75,7 +75,7 @@ function cardGame()
                         ["Selected"] = 19
                     }
                 },
-                [2] = "\3"
+                [2] = "\4"
             }
         }
         game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
@@ -89,7 +89,7 @@ function cardGame()
                         ["Selected"] = 20
                     }
                 },
-                [2] = "\3"
+                [2] = "\4"
             }
         }
         game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
