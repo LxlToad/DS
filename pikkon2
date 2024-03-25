@@ -1,69 +1,103 @@
-repeat wait() until game:IsLoaded()
-local world = ''
-if game:GetService("Players").LocalPlayer.QuestRemoteEvents.Daily_Shadow_Otherworld.Archivable == true then
-world = 'other'
-else
-world = 'earth'
-end
-if world == 'earth' then
-workspace:WaitForChild("WorldPortals"):WaitForChild("Otherworld"):WaitForChild("Activate"):FireServer()
-end
+local function pikkonFarm()
+    local count = 0
+    local pos = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Position
 
-local count = 0
-local args = {
-    [1] = {
-        [1] = true,
-        [2] = "\28"
-    }
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
-pikkonCFrame = CFrame.new(-12734.748, 902.172302, -1250.52405, 0.0174518824, -0.0344778672, -0.999253035, -4.241243e-06, 0.999405265, -0.0344831906, 0.999847651, 0.000606033951, 0.0174413919)
-game:GetService("Workspace").Main.Live["ImxgineBeing"].HumanoidRootPart.CFrame = pikkonCFrame
-wait(2)
-local pos = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Position
-local tp1 = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Position
-local tp2 = game:GetService("Workspace").Main.Live.Pikkon.Hitboxes.CharacterHitBox.Position
-
-wait(5)
-local args = {
-    [1] = {
+    while pos ~= nil do
+        local tp = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.CFrame
+        if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame ~= tp + tp.LookVector * 5 then
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp + tp.LookVector * 5
+        end
+        wait(0.18)
+        pos = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Position
+        count=count+1 
+        local args = {
         [1] = {
-            ["Mode"] = "LegendarySuperSaiyan"
-        },
-        [2] = "L",
-        [3] = "UsedTransform",
-        [4] = "\27"
-    }
-}
+            ["Victim"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Pikkon"),
+            ["VictimPosition"] = pos,
+            ["CurrentHeavy"] = 1,
+            ["LocalInfo"] = {
+                ["Flying"] = true
+            },
+            ["CurrentLight"] = 1,
+            ["CurrentLightCombo"] = 1,
+            ["Type"] = "Light",
+            ["AnimSet"] = "SickleOfSorrow"
+            }
+        }
 
-game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
-wait(3)
-while pos ~= nil do
-    local tp = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.CFrame
-    if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame ~= tp + tp.LookVector * 5 then
-      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp + tp.LookVector * 5
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
     end
-    wait(0.0001)
-    pos = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Position
-    count=count+1 
+end
+
+local function setup()
+    local check = game:GetService("Players").LocalPlayer.QuestRemoteEvents:GetChildren()
+    local world = ""
+    for _,v in pairs(check) do
+        if v.Name == "Daily_Shadow_Otherworld" then
+            world = "otherworld"
+            break
+        else
+            world = "earth"
+        end
+    end
+
+    if world == "earth" then
+        workspace:WaitForChild("WorldPortals"):WaitForChild("Otherworld"):WaitForChild("Activate"):FireServer()
+        wait(10)
+    else
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LxlToad/DS/main/fly.lua"))()
+    end
+
+    wait(1)
+
     local args = {
-    [1] = {
-        ["Victim"] = workspace:WaitForChild("Main"):WaitForChild("Live"):WaitForChild("Pikkon"),
-        ["Type"] = "Heavy",
-        ["CurrentHeavy"] = 2,
-        ["LocalInfo"] = {
-            ["Flying"] = false
-        },
-        ["CurrentLight"] = 1,
-        ["CurrentLightCombo"] = 1,
-        ["VictimPosition"] = pos,
-        ["AnimSet"] = "Broly"
+        [1] = {
+            [1] = {
+                ["Mode"] = "LegendarySuperSaiyan"
+            },
+            [2] = "P",
+            [3] = "UsedTransform",
+            [4] = "\31"
         }
     }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))    
+    wait(2)
+    local args = {
+        [1] = {
+            [1] = {
+                [1] = "\1",
+                [2] = {
+                    ["ID"] = "Kaioken",
+                    ["Action"] = "Fire",
+                    ["Params"] = {}
+                }
+            },
+            [2] = "d"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
+    wait(2)    
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12710.6943, 906.934753, -1268.13867, -0.94708544, 0, 0.320981562, 0, 1, 0, -0.320981562, 0, -0.94708544)
+end
 
-    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
+
+
+
+
+
+repeat wait() until game:IsLoaded()
+wait(10)
+
+pcall(setup)
+wait(5)
+local success, errorMsg = pcall(pikkonFarm)
+if success then
+    print("Success")
+else
+    print("Error: ".. errorMsg)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12710.6943, 906.934753, -1268.13867, -0.94708544, 0, 0.320981562, 0, 1, 0, -0.320981562, 0, -0.94708544)
 end
 wait(10)
 workspace:WaitForChild("WorldPortals"):WaitForChild("Earth"):WaitForChild("Activate"):FireServer()
-
