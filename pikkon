@@ -1,9 +1,7 @@
 local count = 0
-pos = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Position
+pcall(function() pos = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Position end)
 
-
-while pos ~= nil do
-    pcall(function()
+local function pikkon()
     local tp = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.CFrame
     if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame ~= tp + tp.LookVector * 5 then
       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp + tp.LookVector * 5
@@ -27,5 +25,9 @@ while pos ~= nil do
     }
 
     game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("TryAttack"):FireServer(unpack(args))
-    end)
 end
+while pos ~= nil do
+   local success, errorMsg =  pcall(pikkon)
+    if  not success then break end
+end
+print("Done!")
