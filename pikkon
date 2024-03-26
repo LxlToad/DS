@@ -9,7 +9,7 @@ while pos ~= nil do
     wait(0.18)
     local success, error = pcall(function() pos = game:GetService("Workspace").Main.Live.Pikkon.HumanoidRootPart.Position end)
     if success then
-        pass 
+        print("success") 
     else
         break
     end
