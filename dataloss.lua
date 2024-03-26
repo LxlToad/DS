@@ -260,7 +260,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("dataRemoteEvent"):FireServer(unpack(args))
-print("dataloss started!")
+
 
 
 
